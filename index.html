@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharat Earth Motors</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ffd700;
+            --secondary: #ffcc00;
+            --black: #1e252b;
+            --light: #f9fafc;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--black);
+            scroll-behavior: smooth;
+        }
+        .jcb-gradient {
+            background: linear-gradient(135deg, #ffd700 0%, #ffcc00 100%);
+        }
+        .jcb-text-gradient {
+            background: linear-gradient(135deg, #ffd700 0%, #ffcc00 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .whatsapp-float {
+            position: fixed;
+            width: 56px;
+            height: 56px;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            bottom: -10px;
+            left: 25%;
+            background: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/+919610590009?text=Hello!%20I'm%20interested%20in%20JCB%20equipment" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header/Navigation -->
+    <header class="bg-gray-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <img src="https://www.freepnglogos.com/uploads/jcb-png/jcb-excavator-png-image-purepng-transparent-png-1.png" alt="Bharat Earth Movers Logo" class="h-12 mr-3">
+                    <div>
+                        <h1 class="text-2xl font-bold jcb-text-gradient">Bharat Earth Motors</h1>
+                        <p class="text-sm text-gray-300">Driven by Speed & Powered by Trust</p>
+                    </div>
+                </div>
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#home" class="nav-link text-white font-medium px-3 py-2">Home</a>
+                    <a href="#about" class="nav-link text-white font-medium px-3 py-2">About Us</a>
+                    <a href="#products" class="nav-link text-white font-medium px-3 py-2">Process</a>
+                    <a href="#services" class="nav-link text-white font-medium px-3 py-2">Services</a>
+                    <a href="#gallery" class="nav-link text-white font-medium px-3 py-2">Gallery</a>
+                    <a href="#contact" class="nav-link text-white font-medium px-3 py-2">Contact</a>
+                </nav>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu bg-gray-900 md:hidden">
+                <div class="px-4 py-3 space-y-2">
+                    <a href="#home" class="block px-4 py-2 text-white font-medium hover:bg-gray-800 rounded">Home</a>
+                    <a href="#about" class="block px-4 py-2 text-white font-medium hover:bg-gray-800 rounded">About Us</a>
+                    <a href="#products" class="block px-4 py-2 text-white font-medium hover:bg-gray-800 rounded">Process</a>
+                    <a href="#services" class="block px-4 py-2 text-white font-medium hover:bg-gray-800 rounded">Services</a>
+                    <a href="#gallery" class="block px-4 py-2 text-white font-medium hover:bg-gray-800 rounded">Gallery</a>
+                    <a href="#contact" class="block px-4 py-2 text-white font-medium hover:bg-gray-800 rounded">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-black text-white py-20 md:py-32 overflow-hidden">
+        <div class="absolute inset-0 opacity-30">
+            <img src="https://www.freepnglogos.com/uploads/jcb-png/jcb-excavator-png-image-purepng-transparent-png-1.png" alt="JCB Background" class="w-full h-full object-cover">
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-2xl">
+                <h2 class="text-4xl md:text-6xl font-bold mb-4 jcb-text-gradient">BUILDING INDIA'S FUTURE</h2>
+                <p class="text-lg md:text-xl mb-8">Premium JCB equipment for all your construction needs. Quality, durability, and performance you can trust.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#products" class="px-8 py-3 bg-yellow-500 text-black font-bold rounded hover:bg-yellow-400 transition duration-300">Our Products</a>
+                    <a href="#contact" class="px-8 py-3 border-2 border-yellow-500 text-white font-bold rounded hover:bg-yellow-500 hover:text-black transition duration-300">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">ABOUT US</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="about.jpg" alt="Bharat Earth Movers Showroom" class="rounded-lg shadow-xl w-full h-96">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4 text-black">Your Trusted JCB Equipment Partner</h3>
+                    <p class="text-gray-700 mb-4">With over 20 years of experience in the heavy equipment industry, Bharat Earth Movers has been serving construction professionals across the region with top-quality machinery and exceptional service.</p>
+                    <p class="text-gray-700 mb-6">We pride ourselves on offering the latest JCB technology, comprehensive after-sales support, and expert advice to help you choose the right equipment for your projects.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <div class="text-yellow-500 text-3xl mb-2">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <h4 class="font-bold mb-1">Certified</h4>
+                            <p class="text-sm text-gray-600">Authorized JCB dealer</p>
+                        </div>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <div class="text-yellow-500 text-3xl mb-2">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h4 class="font-bold mb-1">Expert Team</h4>
+                            <p class="text-sm text-gray-600">Trained professionals</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title"> Meet Our Proprietor</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2">
+                    <h4 class="font-poppins text-jcb-black mb-4" style="font-weight: bold; font-size: 28px;">
+                            Vijay Kukna Barmer
+                        </h4>
+                        <div style="font-size: 18px; color: #555; line-height: 1.5;">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-map-marker-alt text-jcb-yellow" style="margin-right: 15px; font-size: 20px;"></i>
+                                <span>
+                                    Bharat Earth Motors<br />
+                                    Chohtan Circle, Barmer – 344001
+                                </span>
+                            </div>
+                            <div class="flex items-center mb-4">
+                                <i class="fab fa-whatsapp" style="color: #25D366; margin-right: 15px; font-size: 20px;"></i>
+                                <a href="https://wa.me/919610590009" style="color: #25D366; text-decoration: none; font-weight: bold;">
+                                    +91 9610590009
+                                </a>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-clock text-jcb-yellow" style="margin-right: 15px; font-size: 20px;"></i>
+                                <span style="font-weight: bold;">24x7 Service Available</span>
+                                
+                            </div>
+                        </div>
+                </div>
+                <div><br></div>
+                <div class="md:w-1/4 mb-0 md:mb-0 md:pr-0">
+                    <img src="vijay kukna.jpg" alt="Bharat Earth Movers Showroom" class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">Service Process</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md product-card transition duration-300">
+                    <div class="md:w-full mb-0 md:mb-0 md:pr-0">
+                    <img src="before.jpg" alt="Bharat Earth Movers Showroom" class="rounded-lg shadow-xl w-full h-96">
+                </div>
+                <div><br></div>
+                    <div class="px-3">
+                        <h3 class="font-poppins text-jcb-black mb-8 text-center" style="font-weight: bold; font-size: 24px;">
+                        <i class="fas fa-exclamation-triangle " style="color: #dc3545; margin-right: 15px;"></i>Before Service
+                    </h3>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md product-card transition duration-300">
+                    <div class="md:w-full mb-0 md:mb-0 md:pr-0">
+                    <img src="pending.jpg" alt="Bharat Earth Movers Showroom" class="rounded-lg shadow-xl w-full h-96">
+                </div>
+                <div><br></div>
+                    <div class="px-3">
+                        <h3 class="font-poppins text-jcb-black mb-8 text-center" style="font-weight: bold; font-size: 24px;">
+                        <i class="fas fa-tools " style="color: #bddc35; margin-right: 15px;"></i>Work in Progress
+                    </h3>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                 <div class="bg-white rounded-lg overflow-hidden shadow-md product-card transition duration-300">
+                    <div class="md:w-full mb-0 md:mb-0 md:pr-0">
+                    <img src="after.jpg" alt="Bharat Earth Movers Showroom" class="rounded-lg shadow-xl w-full h-96">
+                </div>
+                <div><br></div>
+                    <div class="px-3">
+                        <h3 class="font-poppins text-jcb-black mb-8 text-center" style="font-weight: bold; font-size: 24px;">
+                        <i class="fas fa-check-circle " style="color: #37ff00; margin-right: 15px;"></i>After Service
+                    </h3>
+                    </div>
+                </div>
+                <!--
+                <div class="bg-white rounded-lg overflow-hidden shadow-md product-card transition duration-300">
+                    <img src="https://www.freepnglogos.com/uploads/jcb-png/jcb-excavator-png-image-purepng-transparent-png-1.png" alt="JCB VM117" class="w-full h-48 object-contain">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">JCB VM117</h3>
+                        <p class="text-gray-600 mb-4">Heavy-duty vibratory roller for excellent compaction performance on all surfaces.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-black">₹32.7 Lakhs</span>
+                            <a href="https://wa.me/+916378842182?text=I'm%20interested%20in%20the%20JCB%20VM117" class="px-4 py-2 bg-yellow-500 text-black rounded hover:bg-yellow-400 transition duration-300">Enquire Now</a>
+                        </div>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">OUR SERVICES</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                 
+                <div class="bg-gray-100 p-8 rounded-lg text-center hover:shadow-lg transition duration-300">
+                    <div class="text-yellow-500 text-5xl mb-6">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Equipment Maintenance</h3>
+                    <p class="text-gray-700">Comprehensive maintenance services to keep your JCB equipment running at peak performance.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-gray-100 p-8 rounded-lg text-center hover:shadow-lg transition duration-300">
+                    <div class="text-yellow-500 text-5xl mb-6">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Repair Services</h3>
+                    <p class="text-gray-700">Expert repair services using genuine JCB parts to ensure longevity of your equipment.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-gray-100 p-8 rounded-lg text-center hover:shadow-lg transition duration-300">
+                    <div class="text-yellow-500 text-5xl mb-6">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">24/7 Support</h3>
+                    <p class="text-gray-700">Round-the-clock customer support and emergency services when you need them most.</p>
+                </div>
+            </div>
+            <div class="mt-12 bg-yellow-50 p-8 rounded-lg border-l-4 border-yellow-500">
+                <h3 class="text-2xl font-bold mb-4">Why Choose Our Services?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex items-start">
+                        <div class="text-yellow-500 text-xl mr-4 mt-1">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-1">Genuine Parts</h4>
+                            <p class="text-gray-700">We use only authentic JCB parts for all repairs and maintenance.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-yellow-500 text-xl mr-4 mt-1">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-1">Trained Technicians</h4>
+                            <p class="text-gray-700">Our team is factory-trained to handle all JCB equipment models.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-yellow-500 text-xl mr-4 mt-1">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-1">Quick Turnaround</h4>
+                            <p class="text-gray-700">Minimize downtime with our efficient service processes.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-yellow-500 text-xl mr-4 mt-1">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-1">Service Warranty</h4>
+                            <p class="text-gray-700">All our services come with a satisfaction guarantee.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">GALLERY</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="md:w-full mb-0 md:mb-0 md:pr-0">
+                    <img src="1.jpg" alt="Bharat Earth Movers Showroom" class="rounded-lg shadow-xl w-full h-96">
+                </div>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="md:w-full mb-0 md:mb-0 md:pr-0">
+                    <img src="2.jpg" alt="Bharat Earth Movers Showroom" class="rounded-lg shadow-xl w-full h-96">
+                </div>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                   <div class="md:w-full mb-0 md:mb-0 md:pr-0">
+                    <img src="3.jpg" alt="Bharat Earth Movers Showroom" class="rounded-lg shadow-xl w-full h-96">
+                </div>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="md:w-full mb-0 md:mb-0 md:pr-0">
+                    <img src="4.jpg" alt="Bharat Earth Movers Showroom" class="rounded-lg shadow-xl w-full h-96">
+                </div>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="md:w-full mb-0 md:mb-0 md:pr-0">
+                    <img src="5.jpg" alt="Bharat Earth Movers Showroom" class="rounded-lg shadow-xl w-full h-96">
+                </div>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                   <div class="md:w-full mb-0 md:mb-0 md:pr-0">
+                    <img src="6.jpg" alt="Bharat Earth Movers Showroom" class="rounded-lg shadow-xl w-full h-96">
+                </div>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="md:w-full mb-0 md:mb-0 md:pr-0">
+                    <img src="7.jpg" alt="Bharat Earth Movers Showroom" class="rounded-lg shadow-xl w-full h-96">
+                </div>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                   <div class="md:w-full mb-0 md:mb-0 md:pr-0">
+                    <img src="8.jpg" alt="Bharat Earth Movers Showroom" class="rounded-lg shadow-xl w-full h-96">
+                </div>
+            </div>
+            <div class="text-center align-items mt-12">
+                <a href="#contact" class="px-8 py-3 bg-yellow-500 text-black font-bold rounded hover:bg-yellow-400 transition duration-300 inline-block">View More Photos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-black text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">WHAT OUR CUSTOMERS SAY</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-900 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-500 text-2xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-6 italic">"The JCB 3DX I purchased from Bharat Earth Motors has been working flawlessly for over 2 years now. Their after-sales service is exceptional."</p>
+                    <div class="flex items-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/194/194828.png" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Rajesh Kumar</h4>
+                            <p class="text-sm text-gray-400">Construction Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-900 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-500 text-2xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-6 italic">"Their team guided us in choosing the perfect JCB equipment for our projects. The support and maintenance services are top-notch."</p>
+                    <div class="flex items-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/194/194828.png" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Anita Sharma</h4>
+                            <p class="text-sm text-gray-400">Infrastructure Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-900 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-500 text-2xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-6 italic">"Reliable equipment and excellent customer service. The JCB VM117 has been a game-changer for our road construction projects."</p>
+                    <div class="flex items-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/194/194828.png" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Vikram Singh</h4>
+                            <p class="text-sm text-gray-400">Road Contractor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">CONTACT US</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Contact Info -->
+                <div class="bg-gray-100 p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-6">Get in Touch</h3>
+                    <p class="text-gray-700 mb-4 italic">Driven by Speed & Powered by Trust</p>
+                    <p class="text-gray-700 mb-4 italic">गति से संचालित और विश्वास से सशक्त</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-yellow-500 text-xl mr-4"></i>
+                            <p class="text-gray-700">Bharat Earth Motors, Barmer, Rajasthan, India</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-yellow-500 text-xl mr-4"></i>
+                            <p class="text-gray-700">+91 9610590009</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-yellow-500 text-xl mr-4"></i>
+                            <p class="text-gray-700">info@bharatearthmotors.com</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-whatsapp text-yellow-500 text-xl mr-4"></i>
+                            <a href="https://wa.me/+916378842182?text=Hello!%20I'm%20interested%20in%20JCB%20equipment" class="text-gray-700 hover:text-yellow-500">Chat on WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex items-center">
+                        <img src="vijay kukna.jpg" alt="Vijay Kukna" class="w-20 h-20 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Vijay Kukna</h4>
+                            <p class="text-gray-600">Owner, Barmer</p>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3594.2197395509043!2d71.3925418!3d25.7302459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39443bea26a8d27f%3A0x281f4677de4b02d3!2sBharat%20Earth%20Motors!5e0!3m2!1shi!2sin!4v1750865438367!5m2!1shi!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <!-- Contact Form -->
+                <div class="bg-gray-100 p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-6">Send Us</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
+                            <input type="text" id="name" class="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Your Name">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-700 font-bold mb-2">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Your Phone Number">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 font-bold mb-2">Message</label>
+                            <textarea id="message" class="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:shadow-lg" rows="5" placeholder="Your Message"></textarea>
+                        </div>
+                        <button id="send-whatsapp" class="w-full px-6 py-3 bg-yellow-500 text-black rounded hover:bg-yellow-400 transition duration-300">Send via WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 jcb-text-gradient">Bharat Earth Motors</h3>
+                    <p class="text-gray-400 text-sm mb-2">Driven by Speed & Powered by Trust </p>
+                    <p class="text-gray-400 text-sm mb-2"> गति से संचालित और विश्वास से सशक्त</p>
+                    <p class="text-gray-400">Your trusted partner for JCB equipment, delivering quality and reliability for all your construction needs.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 jcb-text-gradient">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-yellow-400 transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-yellow-400 transition duration-300">About Us</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-yellow-400 transition duration-300">Process</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-yellow-400 transition duration-300">Services</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-yellow-400 transition duration-300">Gallery</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-yellow-400 transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 jcb-text-gradient">Contact Info</h3>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-map-marker-alt mr-2"></i>Bharat Earth Motors, Barmer, Rajasthan, India</p>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-phone mr-2"></i>+91 9610590009</p>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-envelope mr-2"></i>info@bharatearthmotors.com</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-yellow-400 transition duration-300"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-400 transition duration-300"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-400 transition duration-300"><i class="fab fa-linkedin-in text-xl"></i></a>
+                        <a href="https://wa.me/+919610590009?text=Hello!%20I'm%20interested%20in%20JCB%20equipment" class="text-gray-400 hover:text-yellow-400 transition duration-300"><i class="fab fa-whatsapp text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-gray-400">
+                <p>© 2025 Bharat Earth Moters. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and WhatsApp Form -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+
+        // WhatsApp Form Submission
+        const sendWhatsAppButton = document.getElementById('send-whatsapp');
+        sendWhatsAppButton.addEventListener('click', () => {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            const whatsappMessage = `Hello! I'm ${name}. Phone: ${phone}. Message: ${message}`;
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            window.open(`https://wa.me/+919610590009?text=${encodedMessage}`, '_blank');
+        });
+    </script>
+</body>
+</html>
